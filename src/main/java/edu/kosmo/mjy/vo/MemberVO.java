@@ -21,6 +21,5 @@ public class MemberVO {
 	private int miliage;
 	private String name;
 	private String add1;
-	private String add2;
-	private int adminck;			
+	private String add2;				
 }

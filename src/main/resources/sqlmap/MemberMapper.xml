@@ -6,14 +6,18 @@
 <!--namespace는 Mapper 경로 + 인터페이스명  id는 Mapper의 함수와 일치해야함  -->
 <mapper namespace="edu.kosmo.mjy.mapper.MemberMapper">
 	<insert id="memberJoin">
-		insert into member(userid, password, phone, name, adminck) values(#{userid}, #{password}, #{phone}, #{name}, 0)
+		insert into member(userid, password, phone, miliage, name) values(#{userid}, #{password}, #{phone},
+		0,#{name})
 	</insert>
+	
 
-	<!-- <select id="memberLogin" resultType="edu.kosmo.mjy.vo.MemberVO">
-		select userid, password from member where userid = #{userid}	
+	<select id="memberLogin" resultType="edu.kosmo.mjy.vo.MemberVO"> <!-- resultType 패키지명 + 반환 타입 -->
+		 select userid, password, miliage from member where userid = #{userid}
 	</select>
- -->
 
+
+
+  
 </mapper>
 
 

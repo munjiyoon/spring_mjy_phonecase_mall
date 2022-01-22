@@ -23,5 +23,5 @@ public interface MemberService {
 	//Service인터페이스는 ServiceImpl 클래스가 구현
 	public void memberJoin(MemberVO memberVO) throws Exception; //회원가입 memberJoin메소드
 	
-	//public MemberVO memberLogin(MemberVO memberVO) throws Exception; //로그인  //MemberVO를 파라미터, 반환 값으로 사용
+	public MemberVO memberLogin(MemberVO memberVO) throws Exception; //로그인  //MemberVO를 파라미터, 반환 값으로 사용
 }
