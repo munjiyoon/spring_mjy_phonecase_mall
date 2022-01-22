@@ -1,0 +1,6 @@
+1.db계정생성- 2021-01-20
+
+create user mjy_phonecase identified by 1234;
+commit;
+grant connect, resource to mjy_phonecase;
+commit;
