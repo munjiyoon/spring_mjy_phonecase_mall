@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace는 Mapper 경로 + 인터페이스명  id는 Mapper의 함수와 일치해야함  -->
+<mapper namespace="edu.kosmo.mjy.mapper.MemberMapper">
+	<insert id="memberJoin">
+		insert into member(userid, password, phone, name, adminck) values(#{userid}, #{password}, #{phone}, #{name}, 0)
+	</insert>
+
+	<!-- <select id="memberLogin" resultType="edu.kosmo.mjy.vo.MemberVO">
+		select userid, password from member where userid = #{userid}	
+	</select>
+ -->
+
+</mapper>
+
+
+
+
