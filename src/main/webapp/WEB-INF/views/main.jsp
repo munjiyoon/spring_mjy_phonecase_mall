@@ -3,6 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
+	
+<script src="/resources/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
+<script src="/resources/bootstrap/bootstrap.min.js"></script>
+
 <html>
 <head>
 <title>Main</title>
@@ -24,8 +31,7 @@
                 
             </c:if>
             
-              
-          	
+               	
             <a href="${pageContext.request.contextPath}/member/logout">로그아웃</a>&nbsp;&nbsp;  
             
             

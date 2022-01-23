@@ -23,7 +23,7 @@ public class MainController {
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public void mainPageGET() {
 		
-		log.info("메인 페이지 진입");
+		log.info("mainPageGET()");
 		
 	}
 	

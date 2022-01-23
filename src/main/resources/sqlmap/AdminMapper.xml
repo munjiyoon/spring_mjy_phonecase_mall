@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace는 Mapper 경로 + 인터페이스명  id는 Mapper의 함수와 일치해야함  -->
+<mapper namespace="edu.kosmo.mjy.mapper.AdminMapper">
+	<!-- 상품등록 -->
+	
+	<insert id="productEnroll">
+		insert into product(productid, productname, productprice, productdes, productimg, productstock) values(#{productid}, #{productname}, #{productprice}, #{productdes},
+		#{productimg}, #{productstock})
+	</insert>
+	
+	<select id="getProductList" resultType="edu.kosmo.mjy.vo.ProductVO">
+		select productid, productname, productprice, productdes, productimg, productstock from product order by productid 
+	</select>
+  
+</mapper>
+
+
+
+

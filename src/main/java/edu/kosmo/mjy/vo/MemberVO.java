@@ -22,4 +22,5 @@ public class MemberVO {
 	private String name;
 	private String add1;
 	private String add2;				
+					
 }

@@ -73,7 +73,7 @@ public class MemberController {
          }
          
          session.setAttribute("member", lvo); // 일치하는 아이디가 있을 경우 (로그인 성공) 세션 객체에 값저장하고 얻어오기
-         return "/main";
+         return "redirect:/main";
  
     }
 
