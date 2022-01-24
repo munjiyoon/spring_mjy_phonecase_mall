@@ -73,6 +73,19 @@ public class AdminController {
 		return "redirect:/admin/page";
 	}
 
+	
+	// 상품 조회 페이지 이동
+	
+	  @RequestMapping(value = "/productView", method = RequestMethod.GET) public
+	  void productView() {
+	  
+	  log.info("상품조회 페이지 진입"); }
+	 
+	
+	
+	
+	
+	
 	// 상품 등록 페이지 이동
 	@RequestMapping(value = "/enroll", method = RequestMethod.GET)
 	public void enrollGet() {
@@ -83,10 +96,9 @@ public class AdminController {
 
 	// 관리자 페이지 이동
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
-	public void loginGET() {
+		public void loginGET() {
 
 		log.info("관리자 페이지 진입");
 
 	}
-
 }

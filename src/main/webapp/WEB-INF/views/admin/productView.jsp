@@ -20,6 +20,7 @@
 		<tr>
 			<td>상품 등록</td>	
 			<td rowspan="4" style="width:70%">
+			
 			<form method="post">
 
 				상품 번호: <input type="text" id="productid" name="productid" required="required" size = "10" /> <br>
