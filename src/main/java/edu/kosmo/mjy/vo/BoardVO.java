@@ -1,6 +1,11 @@
 package edu.kosmo.mjy.vo;
 
+
+
+
+import java.security.Timestamp;
 import java.util.List;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,8 +20,18 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class MemberVO {
-	
+
+/*
+BID           NOT NULL NUMBER        
+BTITLE        NOT NULL VARCHAR2(50)  
+BCONTENT      NOT NULL VARCHAR2(100) 
+BDATE         NOT NULL DATE          
+BHIT                   NUMBER        
+BTYPE_BTYPEID          NUMBER        
+MEMBER_USERID          VARCHAR2(20) */
+     
+
+public class BoardVO {
 	private int bid;
 	private String btitle;
 	private String bname;
@@ -25,14 +40,7 @@ public class MemberVO {
 	private String member_userid;
 	
 	
-	private String userid;
-	private String password;
-	private String phone;
-	private int age;
-	private int miliage;
-	private String name;
-	private String add1;
-	private String add2;				
+
 	
 	
 }

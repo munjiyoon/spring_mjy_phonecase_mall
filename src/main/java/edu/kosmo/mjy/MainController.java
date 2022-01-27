@@ -20,11 +20,18 @@ import lombok.extern.log4j.Log4j;
 @Log4j   //로그 기록
 public class MainController {
 	
+	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public void mainPageGET() {
 		
 		log.info("mainPageGET()");
 		
+	}
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String indexPageGET() {
+		
+		log.info("indexPageGET()");
+		return "index";
 	}
 	
 	

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace는 Mapper 경로 + 인터페이스명 id는 Mapper의 함수와 일치해야함 -->
+<mapper namespace="edu.kosmo.mjy.mapper.BoardMapper">
+
+	<resultMap id="memberMap" type="edu.kosmo.mjy.vo.MemberVO">	
+		<result property="userid" column="userid"/>
+		<result property="password" column="password"/>
+		<result property="phone" column="phone"/>
+		<result property="age" column="age"/>
+		<result property="miliage" column="miliage"/>
+		<result property="name" column="name"/>		
+		
+		<result property="bid" column="bid"/>		
+		<result property="btitle" column="btitle"/>		
+		<result property="bcontent" column="bcontent"/>		
+		<result property="btype_btypeid" column="btype_btypeid"/>		
+		<result property="member_userid" column="member_userid"/>		
+		
+	</resultMap>
+	
+		
+	<select id="getList" resultMap="memberMap">
+		select * from member, board where member.userid = board.member_userid and member.userid = 'admin'
+	</select>
+
+</mapper>
+
+
+
+

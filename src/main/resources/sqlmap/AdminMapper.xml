@@ -13,8 +13,29 @@
 	</insert>
 	
 	<select id="getProductList" resultType="edu.kosmo.mjy.vo.ProductVO">
-		select productid, productname, productprice, productdes, productimg, productstock from product order by productid 
+		select productid, productname, productprice, productstock, productdes, productimg from product order by productid
+		 
 	</select>
+	
+	<select id="read" resultType="edu.kosmo.mjy.vo.ProductVO">
+		<![CDATA[
+		select * from product where productid = #{productid}
+	]]>
+	</select>
+	
+	<update id="update" >
+	<![CDATA[
+		update product set productname = #{productname}, productprice = #{productprice}, productstock = #{productstock}, productdes = #{productdes}, productimg = #{productimg} where productid = #{productid}	
+	]]>
+	</update>
+	
+	<delete id="delete" >
+	<![CDATA[
+		delete from product where productid = #{productid}
+	]]>
+	</delete>
+	
+	
   
 </mapper>
 

@@ -16,6 +16,14 @@ public interface AdminMapper {
 	//상품목록
 	public List<ProductVO> getProductList();
 	
-
+	//상품 조회
+	//http://localhost:8282/mjy/admin/productView?productid=10
+	public ProductVO read(int productid);
 	
+	//상품 삭제
+	void delete(int productid);
+	
+	//상품 수정
+	void update(ProductVO productVO);
+
 }

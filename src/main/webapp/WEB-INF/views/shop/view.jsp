@@ -5,8 +5,8 @@
 	prefix="sec"%>
 	
 <script src="/resources/jquery/jquery.min.js"></script>
-
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
+
 
 <html>
 <head>
@@ -34,8 +34,7 @@
             
             
             <span>MyPage</span>&nbsp;&nbsp;
-            <span>장바구니</span>&nbsp;&nbsp;
-            <span> <a href="${pageContext.request.contextPath}/community/notice">Community</a></span>
+            <span>장바구니</span>
             
             
             <br>
@@ -43,15 +42,10 @@
             <span>현재 적립금 :${member.miliage}원</span> &nbsp;&nbsp;
             
             <div>
-            	 <img class="img" src="${pageContext.request.contextPath}/resources/img/case1.png">       	 
+            	 <img class="img" src="${pageContext.request.contextPath}/resources/img/case1.png">
             </div>
             
-           <div>
-           <a class="img1" href="${pageContext.request.contextPath}/shop/view">곤뇽이 케이스</a>
-       
-           </div>
-             
-             
+             <a href="${pageContext.request.contextPath}/shop/view">상품보기</a>
             
          
           

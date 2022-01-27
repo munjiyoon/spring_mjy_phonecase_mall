@@ -3,7 +3,8 @@ package edu.kosmo.mjy.service;
 
 import java.util.List;
 
-
+import edu.kosmo.mjy.vo.BoardVO;
+import edu.kosmo.mjy.vo.MemberVO;
 import edu.kosmo.mjy.vo.ProductVO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,16 +23,8 @@ ADD1              VARCHAR2(20)
 ADD2              VARCHAR2(50)*/ 
 
 
-public interface AdminService {
+public interface BoardService {
 	
 	//상품 등록 서비스단에는 mappper의 메소드와 이름이 같아도 상관없지만 사용자에게 좀더 친숙한 이름 사용
-	public void productEnroll(ProductVO productVO) throws Exception; 
-	
-	public List<ProductVO> getProductList(); //상품목록
-	
-	public ProductVO read(int productid); //상품조회
-	
-	void modify(ProductVO productVO);//상품 수정
-	
-	void delete(int productid); //상품 삭제
+	List<BoardVO> getList();
 }

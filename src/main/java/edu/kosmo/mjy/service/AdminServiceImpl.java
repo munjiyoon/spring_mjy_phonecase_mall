@@ -31,8 +31,28 @@ public class AdminServiceImpl implements AdminService{
 
 	@Override
 	public List<ProductVO> getProductList() {
-		// TODO Auto-generated method stub
 		return adminMapper.getProductList();
 	}
+
+	@Override
+	public ProductVO read(int productid) {
+		
+		return adminMapper.read(productid);
+	}
+
+	@Override
+	public void modify(ProductVO productVO) {
+		adminMapper.update(productVO);
+		
+	}
+
+	@Override
+	public void delete(int productid) {
+		adminMapper.delete(productid);		
+	}
+
+	
+
+	
 	
 }

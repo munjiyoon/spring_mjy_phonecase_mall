@@ -32,6 +32,8 @@ public class ProductVO {
 	private String productimg;
 	private int productstock;
 	
+	private String productsmallimg;
+	
 	
 	
 }

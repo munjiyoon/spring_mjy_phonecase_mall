@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+
 import edu.kosmo.mjy.mapper.AdminMapper;
 import edu.kosmo.mjy.service.AdminService;
 import edu.kosmo.mjy.service.MemberService;
@@ -28,6 +29,7 @@ public class AdminController {
 	@Autowired // AdminService의 메서드를 사용할 수 있도록 의존성 주입
 	AdminService adminService;
 
+	//상품목록
 	@RequestMapping(value = "/productList", method = RequestMethod.GET)
 	public String productListGet(Model model) {
 
@@ -38,29 +40,9 @@ public class AdminController {
 
 		return "admin/productList";
 	}
-
-	// 상품 목록 출력
-	/*
-	 * @GetMapping("/productList") public String list(Model model) {
-	 * 
-	 * System.out.println("상품 목록 페이지 진입"); log.info("getProductlist() ..");
-	 * model.addAttribute("productList", adminService.getProductList());
-	 * 
-	 * return "/productList"; //http://localhost:8282/mjy/admin/productList 흐음 ,,? }
-	 */
-
-	// 상품 목록 페이지 이동
-	/*
-	 * @RequestMapping(value = "/productList", method = RequestMethod.GET) public
-	 * void ListGet() {
-	 * 
-	 * log.info("상품목록 페이지 진입"); }
-	 */
-
-	// RedirectAttributes의 addFlashAttribute 메서드를 활용하여 상품 이름을 "enroll_result" 속성에 저장
-
 	
-	/* 상품 등록 */
+	
+	//상품 등록
 	@PostMapping("/enroll")
 	public String productEnrollPost(ProductVO productVO, RedirectAttributes rttr) throws Exception {
 
@@ -74,18 +56,54 @@ public class AdminController {
 	}
 
 	
-	// 상품 조회 페이지 이동
+	//상품 수정
+	@PostMapping("/modify")
+	public String modify(ProductVO productVO, Model model) {
+		
+		log.info("modify() ...");
+		System.out.println("ProductVO:" + productVO);
+		
+		adminService.modify(productVO);
+		
+		
+		return "redirect:productList"; 
+		
+	}
 	
-	  @RequestMapping(value = "/productView", method = RequestMethod.GET) public
-	  void productView() {
+	
+	//상품 조회
+	@GetMapping("/productView")
+	public String productView(ProductVO productVO, Model model) {
+			
+			log.info("productView() ..");
+			log.info("productView : " + productVO);
+			
+			int productid = productVO.getProductid();
+			
+			model.addAttribute("productView", adminService.read(productid));
+				
+			return "admin/productView";
+			
+	}
+	
+	//상품 삭제
+		@GetMapping("/delete")
+		public String delete(ProductVO productVO, Model model) {
+				
+			log.info("delete() ..");		
+		
+			adminService.delete(productVO.getProductid());
+			
+			
+			log.info("productVO : " + productVO);
+			
+			return "redirect:productList";
+				
+				
+		}
 	  
-	  log.info("상품조회 페이지 진입"); }
-	 
-	
-	
-	
-	
-	
+		
+	  
 	// 상품 등록 페이지 이동
 	@RequestMapping(value = "/enroll", method = RequestMethod.GET)
 	public void enrollGet() {

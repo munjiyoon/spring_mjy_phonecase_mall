@@ -28,6 +28,8 @@
          <th>상품 이름</th>
          <th>상품 가격</th>
          <th>상품 재고</th>
+         <th>상품 설명</th>
+         <th>상품 이미지</th>
       </tr>
 
       <c:forEach var="product" items="${productList}">
@@ -37,7 +39,10 @@
             <td><a href="productView?productid=${product.productid}">${product.productname}</a></td>
            
             <td><fmt:formatNumber value="${product.productprice}" type="currency"/></td>
+            
             <td>${product.productstock}</td>
+            <td>${product.productdes}</td>
+            <td>${product.productimg}</td>
          </tr>
       </c:forEach>
    </table>
